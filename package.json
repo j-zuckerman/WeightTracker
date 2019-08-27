@@ -1,0 +1,27 @@
+{
+  "name": "weighttracker",
+  "version": "1.0.0",
+  "description": "Backend for weight-tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-zuckerman/WeightTracker.git"
+  },
+  "author": "James Zuckerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-zuckerman/WeightTracker/issues"
+  },
+  "homepage": "https://github.com/j-zuckerman/WeightTracker#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
