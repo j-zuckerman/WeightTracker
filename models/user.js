@@ -14,6 +14,7 @@ const userSchema = mongoose.Schema({
     }
   ]
 });
+userSchema.plugin(uniqueValidator);
 
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {

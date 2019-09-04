@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const weightMeasureSchema = new mongoose.Schema({
   weight: Number,
-  date: Date
+  date: Date,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 weightMeasureSchema.set('toJSON', {

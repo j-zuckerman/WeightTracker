@@ -10,13 +10,22 @@ weightRouter.get('/', (request, response) => {
 
 // @route POST api/weights
 // @desc  Add new weight measurement
-weightRouter.post('/', (request, response) => {
-  const newMeasurement = new Weight({
-    weight: req.body.weight,
-    date: req.body.date
+weightRouter.post('/', async (request, response) => {
+  const body = request.body;
+
+  const user = await User.findById(body.userId);
+
+  const measurement = new Weight({
+    weight: body.weight,
+    date: new Date(),
+    user: user._id
   });
 
-  newMeasurement.save().then(weight => res.json(weight));
+  const savedMeasurement = await measurement.save();
+  user.weightMeasurements = user.weightMeasurements.concat(
+    savedMeasurement._id
+  );
+  await user.save();
 });
 
 module.exports = weightRouter;

@@ -1,0 +1,6 @@
+post http://localhost:3001/api/weights
+Content-Type: application/json
+
+{
+    "weight": 200
+}
