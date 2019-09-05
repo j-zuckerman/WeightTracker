@@ -3,7 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
+
 const weightRouter = require('./controllers/weight');
+const usersRouter = require('./controllers/users');
+const loginRouter = require('./controllers/login');
+
 const middleware = require('./utils/middleware');
 const mongoose = require('mongoose');
 const logger = require('./utils/logger');
@@ -24,6 +28,9 @@ app.use(express.static('build'));
 app.use(bodyParser.json());
 
 app.use('/api/weights', weightRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/login', loginRouter);
+
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 

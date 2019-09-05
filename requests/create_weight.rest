@@ -2,5 +2,6 @@ post http://localhost:3001/api/weights
 Content-Type: application/json
 
 {
-    "weight": 200
+    "weight": 200,
+    "userId": "5d6f28a734b1011980165651"
 }

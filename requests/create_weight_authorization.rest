@@ -1,0 +1,8 @@
+post http://localhost:3001/api/weights
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+
+{
+    "weight": 300,
+   
+}
